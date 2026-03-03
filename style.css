@@ -6,6 +6,18 @@
     place-items: center;
 }
 
+.esquerda{
+      left: 10px;
+}
+.meio {
+ display: grid;
+    place-items: center;
+}
+
+.direita {
+right: 10px;
+}
+
 
 * {
     font-family: Arial, Helvetica, sans-serif;
