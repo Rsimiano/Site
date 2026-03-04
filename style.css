@@ -6,17 +6,21 @@
     place-items: center;
 }
 
-.esquerda{
-      left: 10px;
+
+
+.Tecnologia {
+    text-align: left; 
+    padding-left: 10px;
 }
-.meio {
- display: grid;
-    place-items: center;
+.descricao {
+    text-align: right; 
+    
+}
+.nivel {
+    text-align: right; 
+    padding: auto;
 }
 
-.direita {
-right: 10px;
-}
 
 
 * {
