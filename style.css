@@ -1,116 +1,185 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+/* CORPO */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #1f1f1f, #2c3e50);
-    margin: 0;
-    padding: 50px 20px;
-    color: #fff;
+    background: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
 }
 
-/* Título */
-.imagem-flutuante {
+/* HEADER */
+header {
+    background: #111827;
+    color: white;
+    padding: 20px 0;
     text-align: center;
-    font-size: 32px;
-    margin-bottom: 40px;
-    letter-spacing: 1px;
 }
 
-/* Container da tabela */
+h1.imagem-flutuante {
+    font-size: 36px;
+    letter-spacing: 2px;
+}
+
+/* MENU */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+/* SEÇÕES */
+section {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+section h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    border-left: 5px solid #111827;
+    padding-left: 10px;
+}
+
+/* SOBRE */
+#sobre {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    align-items: center;
+}
+
+#sobre img {
+    border-radius: 50%;
+    width: 150px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+aside ul {
+    margin-top: 10px;
+}
+
+aside li {
+    margin-bottom: 5px;
+}
+
+/* PROJETOS */
+#projeto article {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+/* TABELA */
 table {
     width: 100%;
-    max-width: 1000px;
-    margin: auto;
     border-collapse: collapse;
-    background: #ffffff;
-    color: #333;
-    border-radius: 12px;
+    background: white;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
 }
 
-/* Cabeçalho */
 thead {
     background: #111827;
-    color: #fff;
+    color: white;
 }
 
-th {
-    padding: 18px;
-    text-transform: uppercase;
-    font-size: 13px;
-    letter-spacing: 1px;
+th, td {
+    padding: 15px;
+    text-align: left;
 }
 
-/* Linhas */
-td {
-    padding: 18px;
-    border-bottom: 1px solid #eee;
-}
-
-/* Hover suave */
 tbody tr {
-    transition: 0.3s ease;
+    border-bottom: 1px solid #eee;
+    transition: 0.3s;
 }
 
 tbody tr:hover {
-    background: #f3f4f6;
-    transform: scale(1.01);
+    background: #f1f5f9;
 }
 
-/* Badge de nível */
-td:nth-child(2) {
-    font-weight: bold;
+/* FORMULÁRIO */
+form {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    max-width: 600px;
 }
 
-td:nth-child(2)::before {
-    content: "● ";
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-tbody tr:nth-child(1) td:nth-child(1) {
-    border-left: 5px solid #e34c26; /* HTML */
+form input:focus,
+form textarea:focus,
+form select:focus {
+    outline: none;
+    border-color: #38bdf8;
 }
 
-tbody tr:nth-child(2) td:nth-child(1) {
-    border-left: 5px solid #264de4; /* CSS */
+/* BOTÃO */
+.sub {
+    background: #111827;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-tbody tr:nth-child(3) td:nth-child(1) {
-    border-left: 5px solid #f0db4f; /* JS */
+.sub:hover {
+    background: #38bdf8;
 }
 
-/* Responsivo */
+/* FOOTER */
+footer {
+    background: #111827;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 50px;
+}
+
+footer a {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+/* RESPONSIVO */
 @media (max-width: 768px) {
-    table {
-        font-size: 14px;
+    #sobre {
+        grid-template-columns: 1fr;
+        text-align: center;
     }
 
-    th, td {
-        padding: 12px;
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
     }
-}
-
-
-
-
-
-
-* {
-    font-family: Arial, Helvetica, sans-serif;
-}
-div {
-    height: 200px;
-    color: black;
-}
-
-.negrito {
-    font-weight: bold;
-}
-.sub{
-    color: black;
-    font-weight: bold;
-    margin: 5px;
-    padding: 2px;
-    border: 1px solid color(srgb red green blue);
-    background-color: blue;
-}
-
