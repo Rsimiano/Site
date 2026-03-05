@@ -17,7 +17,7 @@ document.querySelectorAll("nav a").forEach(link => {
 // =============================
 const footer = document.querySelector("footer p");
 const anoAtual = new Date().getFullYear();
-footer.innerHTML = `© ${anoAtual} Ricardo Simiano - Todos os direitos reservados`;
+footer.innerHTML = `© ${anoAtual} Ricardo Simiano Albino- Todos os direitos reservados`;
 
 
 // =============================
