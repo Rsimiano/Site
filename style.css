@@ -1,32 +1,41 @@
-/* RESET */
+/* =======================
+   RESET
+======================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* CORPO */
+/* =======================
+   BASE
+======================= */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #f4f6f9;
-    color: #333;
-    line-height: 1.6;
+    color: #1f2937;
+    line-height: 1.7;
 }
 
-/* HEADER */
+/* =======================
+   HEADER
+======================= */
 header {
-    background: #111827;
-    color: white;
-    padding: 20px 0;
+    background: #0f172a;
+    color: #fff;
+    padding: 25px 0;
     text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
 
-h1.imagem-flutuante {
+header h1 {
     font-size: 36px;
     letter-spacing: 2px;
 }
 
-/* MENU */
+/* =======================
+   NAVEGAÇÃO
+======================= */
 nav ul {
     list-style: none;
     display: flex;
@@ -37,8 +46,21 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: white;
-    font-weight: bold;
+    color: #e5e7eb;
+    font-weight: 600;
+    position: relative;
+    transition: 0.3s;
+}
+
+/* linha animada */
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background: #38bdf8;
     transition: 0.3s;
 }
 
@@ -46,32 +68,60 @@ nav a:hover {
     color: #38bdf8;
 }
 
-/* SEÇÕES */
+nav a:hover::after {
+    width: 100%;
+}
+
+/* =======================
+   SEÇÕES
+======================= */
 section {
-    padding: 60px 20px;
+    padding: 70px 20px;
     max-width: 1100px;
     margin: auto;
 }
 
 section h2 {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     font-size: 28px;
-    border-left: 5px solid #111827;
-    padding-left: 10px;
+    border-left: 5px solid #38bdf8;
+    padding-left: 12px;
 }
 
-/* SOBRE */
+/* =======================
+   SOBRE
+======================= */
 #sobre {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 40px;
-    align-items: center;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+    align-items: start;
 }
 
+/* TEXTO */
+#sobre p {
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+/* FOTO */
 #sobre img {
+    width: 160px;
     border-radius: 50%;
-    width: 150px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    display: block;
+    margin-left: auto;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+#sobre img:hover {
+    transform: scale(1.05);
+}
+
+/* HABILIDADES */
+aside {
+    margin-top: 20px;
+    text-align: right;
 }
 
 aside ul {
@@ -79,33 +129,44 @@ aside ul {
 }
 
 aside li {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
-/* PROJETOS */
+/* =======================
+   PROJETOS
+======================= */
 #projeto article {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
 }
 
-/* TABELA */
+#projeto article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* =======================
+   TABELA
+======================= */
 table {
     width: 100%;
     border-collapse: collapse;
-    background: white;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    border-radius: 10px;
+    background: #fff;
+    border-radius: 12px;
     overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
 }
 
 thead {
-    background: #111827;
-    color: white;
+    background: #0f172a;
+    color: #fff;
 }
 
-th, td {
+th,
+td {
     padding: 15px;
     text-align: left;
 }
@@ -119,23 +180,37 @@ tbody tr:hover {
     background: #f1f5f9;
 }
 
-/* FORMULÁRIO */
+/* =======================
+   FORMULÁRIO
+======================= */
 form {
-    background: white;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
     max-width: 600px;
+    margin: 30px auto;
+}
+
+form label {
+    font-weight: 600;
 }
 
 form input,
 form select,
 form textarea {
     width: 100%;
-    padding: 10px;
-    margin: 8px 0 15px 0;
+    padding: 12px;
+    margin: 8px 0 15px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+form input:hover,
+form textarea:hover,
+form select:hover {
+    border-color: #38bdf8;
 }
 
 form input:focus,
@@ -143,25 +218,32 @@ form textarea:focus,
 form select:focus {
     outline: none;
     border-color: #38bdf8;
+    box-shadow: 0 0 5px rgba(56,189,248,0.4);
 }
 
 /* BOTÃO */
-.sub {
-    background: #111827;
-    color: white;
+form button {
+    background: #0f172a;
+    color: #fff;
     border: none;
+    padding: 14px;
     cursor: pointer;
+    border-radius: 6px;
     transition: 0.3s;
 }
 
-.sub:hover {
+form button:hover {
     background: #38bdf8;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
-/* FOOTER */
+/* =======================
+   FOOTER
+======================= */
 footer {
-    background: #111827;
-    color: white;
+    background: #0f172a;
+    color: #e5e7eb;
     text-align: center;
     padding: 30px 20px;
     margin-top: 50px;
@@ -172,10 +254,21 @@ footer a {
     text-decoration: none;
 }
 
-/* RESPONSIVO */
+/* =======================
+   RESPONSIVO
+======================= */
 @media (max-width: 768px) {
+
     #sobre {
         grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    #sobre img {
+        margin: 0 auto;
+    }
+
+    aside {
         text-align: center;
     }
 

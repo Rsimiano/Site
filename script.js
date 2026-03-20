@@ -1,59 +1,100 @@
-
-document.querySelectorAll("nav a").forEach(link => {
-    link.addEventListener("click", function(e) {
-        if (this.hash !== "") {
-            e.preventDefault();
-            const section = document.querySelector(this.hash);
-            section.scrollIntoView({
-                behavior: "smooth"
-            });
-        }
-    });
+// =============================
+// INICIAR SCRIPT QUANDO CARREGAR
+// =============================
+document.addEventListener("DOMContentLoaded", () => {
+    smoothScroll();
+    atualizarAnoFooter();
+    configurarFormulario();
+    animacaoScroll();
 });
+
+
+// =============================
+// SCROLL SUAVE NO MENU
+// =============================
+function smoothScroll() {
+    const links = document.querySelectorAll("nav a");
+
+    links.forEach(link => {
+        link.addEventListener("click", function (e) {
+            const targetId = this.getAttribute("href");
+
+            if (targetId.startsWith("#")) {
+                e.preventDefault();
+
+                const section = document.querySelector(targetId);
+
+                if (section) {
+                    section.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+                }
+            }
+        });
+    });
+}
 
 
 // =============================
 // ANO AUTOMÁTICO NO FOOTER
 // =============================
-const footer = document.querySelector("footer p");
-const anoAtual = new Date().getFullYear();
-footer.innerHTML = `© ${anoAtual} Ricardo Simiano Albino- Todos os direitos reservados`;
+function atualizarAnoFooter() {
+    const footer = document.querySelector("footer p");
+
+    if (footer) {
+        const anoAtual = new Date().getFullYear();
+        footer.innerHTML = `© ${anoAtual} Ricardo Simiano Albino - Todos os direitos reservados`;
+    }
+}
 
 
 // =============================
-// MENSAGEM AO ENVIAR FORMULÁRIO
+// FORMULÁRIO
 // =============================
-const form = document.querySelector("form");
+function configurarFormulario() {
+    const form = document.querySelector("form");
 
-form.addEventListener("submit", function(e) {
-    e.preventDefault();
-    
-    alert("Mensagem enviada com sucesso, Ricardo! 🚀");
-    
-    form.reset();
-});
+    if (!form) return;
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        alert("Mensagem enviada com sucesso! 🚀");
+
+        form.reset();
+    });
+}
 
 
 // =============================
 // ANIMAÇÃO AO ROLAR A PÁGINA
 // =============================
-const sections = document.querySelectorAll("section");
+function animacaoScroll() {
+    const sections = document.querySelectorAll("section");
 
-window.addEventListener("scroll", () => {
+    // Estado inicial
     sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
+        section.style.opacity = "0";
+        section.style.transform = "translateY(40px)";
+        section.style.transition = "all 0.6s ease";
+    });
+
+    function mostrarSecoes() {
         const windowHeight = window.innerHeight;
 
-        if (sectionTop < windowHeight - 100) {
-            section.style.opacity = "1";
-            section.style.transform = "translateY(0)";
-        }
-    });
-});
+        sections.forEach(section => {
+            const sectionTop = section.getBoundingClientRect().top;
 
-// Estado inicial
-sections.forEach(section => {
-    section.style.opacity = "0";
-    section.style.transform = "translateY(40px)";
-    section.style.transition = "all 0.6s ease";
-});
+            if (sectionTop < windowHeight - 100) {
+                section.style.opacity = "1";
+                section.style.transform = "translateY(0)";
+            }
+        });
+    }
+
+    window.addEventListener("scroll", mostrarSecoes);
+
+    // Executa ao carregar também
+    mostrarSecoes();
+}
