@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,9 +17,10 @@
             <ul>
                 <li><a href="#sobre">Sobre mim</a></li>
                 <li><a href="#projeto">Projetos</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
                 <li><a href="#contato">Contato</a></li>
                 <li>
-                    <a href="https://www.linkedin.com/in/rsimiano/?originalSubdomain=br" target="_blank">
+                    <a href="https://www.linkedin.com/in/rsimiano/" target="_blank" rel="noopener noreferrer">
                         Linkedin
                     </a>
                 </li>
@@ -28,40 +30,35 @@
 
     <main>
 
-        <section id="sobre">
+        <section id="sobre" class="fade-in">
             <h2>Sobre mim</h2>
 
-            <img src="Ricardo.s.jpeg" alt="Foto de perfil" width="100" title="Imagem de perfil de Ricardo">
+            <img src="Ricardo.s.jpeg" alt="Foto de perfil de Ricardo" width="120">
 
             <article>
                 <p>Olá, eu sou o Ricardo!</p>
 
-    <p>
-        Sou um profissional versátil, com conhecimentos que unem tecnologia,
-        manutenção técnica e organização administrativa.
-    </p>
+                <p>
+                    Sou um profissional versátil, com conhecimentos que unem tecnologia,
+                    manutenção técnica e organização administrativa.
+                </p>
 
-    <p>
-        Tenho formação em desenvolvimento web básico, com habilidades em criação
-        de páginas e lógica de programação.
-    </p>
+                <p>
+                    Tenho formação em desenvolvimento web básico, com habilidades em criação
+                    de páginas e lógica de programação.
+                </p>
 
-    <p>
-        Na área técnica, possuo experiência em eletrônica com foco em manutenção
-        de placas e tecnologia inverter.
-    </p>
+                <p>
+                    Na área técnica, possuo experiência em eletrônica com foco em manutenção
+                    de placas e tecnologia inverter.
+                </p>
 
-    <p>
-        Também atuo com manutenção de ECU (injeção eletrônica automotiva).
-    </p>
+                <p>
+                    Também atuo com manutenção de ECU (injeção eletrônica automotiva).
+                </p>
 
-    <p>
-        💡 Meu diferencial é a combinação entre conhecimento técnico e visão administrativa.
-    </p>
-
-    <p>
-        📈 Estou sempre em busca de evolução profissional.
-    </p>
+                <p>💡 Meu diferencial é a combinação entre conhecimento técnico e visão administrativa.</p>
+                <p>📈 Estou sempre em busca de evolução profissional.</p>
             </article>
 
             <aside>
@@ -70,13 +67,13 @@
                     <li>HTML</li>
                     <li>CSS</li>
                     <li>JavaScript</li>
-                     <li>Eletrônica</li>
+                    <li>Eletrônica</li>
                 </ul>
             </aside>
         </section>
 
-        <section id="projeto">
-            <h2 title="Meus projetos">Projetos</h2>
+        <section id="projeto" class="fade-in">
+            <h2>Projetos</h2>
 
             <article>
                 <h3>Portfólio</h3>
@@ -84,7 +81,7 @@
             </article>
         </section>
 
-        <section id="habilidades">
+        <section id="habilidades" class="fade-in">
             <h2 class="imagem-flutuante">Habilidades e tecnologias</h2>
 
             <table>
@@ -100,7 +97,7 @@
                     <tr>
                         <td>HTML</td>
                         <td>Iniciante</td>
-                        <td>Capaz de construir estrutura de páginas web semânticas.</td>
+                        <td>Capaz de construir páginas web semânticas.</td>
                     </tr>
 
                     <tr>
@@ -114,10 +111,11 @@
                         <td>Básico</td>
                         <td>Scripts para interação no lado do cliente.</td>
                     </tr>
-                     <tr>
+
+                    <tr>
                         <td>Eletrônica</td>
                         <td>Básico</td>
-                        <td>Capaz de indentificar problemas e fazer manutenção</td>
+                        <td>Capaz de identificar problemas e realizar manutenção.</td>
                     </tr>
                 </tbody>
             </table>
@@ -126,48 +124,68 @@
     </main>
 
     <footer>
-        <p>Direitos reservados a Ricardo Simiano Albino</p>
+        <p>© 2026 Ricardo Simiano Albino - Todos os direitos reservados</p>
 
-        <section id="contato">
-            <h2>Contatos</h2>
-            <p>Favor preencher todos os campos</p>
+        <section id="contato" class="fade-in contato-section">
+    <h2>Contato</h2>
+    <p class="contato-sub">Favor preencher todos os campos</p>
 
-            <form action="https://formsubmit.co/rsimiano@gmail.com" method="POST">
-                <input type="hidden" name="_subject" value="Novo contato do Portfólio!">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_template" value="table">
+    <!-- FORMULÁRIO -->
+    <div class="contato-wrapper">
 
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required>
+        <form class="form-contato" action="https://formsubmit.co/rsimiano@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="Novo contato do Portfólio!">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
 
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required>
+            <input type="text" name="nome" placeholder="Seu nome" required>
+            <input type="email" name="email" placeholder="Seu e-mail" required>
+            <input type="tel" name="telefone" placeholder="Seu telefone" required>
 
-                <label for="telefone">Telefone:</label>
-                <input type="tel" id="telefone" name="telefone" required>
+            <select name="assunto">
+                <option value="orcamento">Orçamento</option>
+                <option value="duvida">Dúvida</option>
+                <option value="outros">Outros</option>
+            </select>
 
-                <label for="assunto">Assunto:</label>
-                <select id="assunto" name="assunto">
-                    <option value="orcamento">Orçamento</option>
-                    <option value="duvida">Dúvida</option>
-                    <option value="outros">Outros</option>
-                </select>
+            <textarea name="mensagem" placeholder="Digite sua mensagem..." required></textarea>
 
-                <label for="mensagem">Mensagem:</label>
-                <textarea id="mensagem" name="mensagem" required></textarea>
+            <button type="submit">Enviar mensagem</button>
+        </form>
 
-                <button type="submit">Enviar mensagem</button>
-            </form>
+        <!-- CAIXAS DE CONTATO -->
+        <div class="container-contato">
 
-            <address>
-                <br>
-                E-mail: <a href="mailto:rsimiano@gmail.com">rsimiano@gmail.com</a><br>
-                Telefone: <a href="tel:+5548999417650">+55 48 99941-7650</a>
-            </address>
-        </section>
+            <div class="contact-box">
+                <h3>📧 Email</h3>
+                <div class="contact-actions">
+                    <a class="btn email-btn"
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=rsimiano@gmail.com"
+                        target="_blank">
+                        Enviar Email
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-box">
+                <h3>📱 WhatsApp</h3>
+                <div class="contact-actions">
+                    <a class="btn whatsapp-btn"
+                        href="https://wa.me/5548999417650"
+                        target="_blank">
+                        Falar no WhatsApp
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
     </footer>
 
     <script src="script.js"></script>
 
 </body>
+
 </html>
